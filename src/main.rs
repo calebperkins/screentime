@@ -17,7 +17,7 @@ enum Event {
     },
 }
 
-fn parse(event: &String) -> Event {
+fn parse(event: &str) -> Event {
     if let Some((kind, payload)) = event.split_once(">>") {
         let fields: Vec<&str> = payload.split(",").collect();
         return match kind {
